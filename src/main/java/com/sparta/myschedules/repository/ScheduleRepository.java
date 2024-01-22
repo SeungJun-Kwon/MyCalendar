@@ -1,8 +1,10 @@
 package com.sparta.myschedules.repository;
 
-import org.springframework.stereotype.Repository;
+import com.sparta.myschedules.entity.Schedule;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class ScheduleRepository {
+import java.util.List;
 
+public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
+    List<Schedule> findAllBy();
 }
