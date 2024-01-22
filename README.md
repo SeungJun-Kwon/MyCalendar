@@ -52,6 +52,8 @@ CREATE TABLE `schedule` (
 	`name` varchar(64) NOT NULL,
 	`content` varchar(2048) NOT NULL,
 	`username` varchar(32) NOT NULL,
-	`password` varchar(16) NOT NULL
+	`password` varchar(16) NOT NULL,
+	'created_at' datetime(6) NOT NULL,
+	'modified_at' datetime(6) NOT NULL
 );
 ```
