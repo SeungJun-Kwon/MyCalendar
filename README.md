@@ -41,3 +41,17 @@
 |일정 선택해서 조회하기|GET|/api/schedules/{id}|ScheduleResponseDto|
 |일정 변경하기|PUT|/api/schedules/{id}|Long|
 |일정 삭제하기|DELETE|/api/schedules/{id}|Long|
+
+## SQL
+
+```
+DROP TABLE IF EXISTS `schedule`;
+
+CREATE TABLE `schedule` (
+	`id` bigint	NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	`name` varchar(64) NOT NULL,
+	`content` varchar(2048) NOT NULL,
+	`username` varchar(32) NOT NULL,
+	`password` varchar(16) NOT NULL
+);
+```
