@@ -25,4 +25,14 @@ public class ScheduleController {
     public List<ScheduleResponseDto> getSchedules(){
         return scheduleService.getSchedules();
     }
+
+    @PutMapping("/{id}/{password}")
+    public Long updateSchedule(@PathVariable Long id, @PathVariable String password, @RequestBody ScheduleRequestDto requestDto) {
+        return scheduleService.updateSchedule(id, password, requestDto);
+    }
+
+    @DeleteMapping("/{id}/{password}")
+    public Long deleteSchedule(@PathVariable Long id, @PathVariable String password) {
+        return scheduleService.deleteSchedule(id, password);
+    }
 }
