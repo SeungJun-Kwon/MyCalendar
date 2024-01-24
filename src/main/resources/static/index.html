@@ -252,7 +252,7 @@
                 type: 'GET',
                 url: `/api/schedules/${currentId}`,
                 success: function (response) {
-                    let message = response;
+                    let message = response['data'];
                     let id = message['id'];
                     let name = message['name'];
                     let content = message['content'];
