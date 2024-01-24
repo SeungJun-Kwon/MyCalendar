@@ -26,7 +26,7 @@ public class ScheduleService {
     }
 
     public List<ScheduleResponseDto> getSchedules() {
-        return scheduleRepository.findAllByOrderByCreatedAt().stream().map(ScheduleResponseDto::new).toList();
+        return scheduleRepository.findAllByOrderByCreatedAtDesc().stream().map(ScheduleResponseDto::new).toList();
     }
 
     @Transactional
@@ -56,5 +56,13 @@ public class ScheduleService {
         scheduleRepository.delete(schedule);
 
         return id;
+    }
+
+    public ScheduleResponseDto getScheduleById(Long id) {
+        Schedule schedule = scheduleRepository.findById(id).orElseThrow( () ->
+                new IllegalArgumentException("선택한 스케줄이 존재하지 않습니다.")
+        );
+
+        return new ScheduleResponseDto(schedule);
     }
 }
